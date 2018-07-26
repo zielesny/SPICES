@@ -1,0 +1,72 @@
+/*A cascading stylesheet for the GraphStream graph used to display a PSMILES structure.
+See the GraphStream documentation for the allowed syntax*/
+node {
+	shape: rounded-box;
+        fill-mode: dyn-plain;
+	fill-color: white;
+	stroke-mode: plain;
+	stroke-width: 1;
+        /*size: 40px, 20px;*/
+        size-mode: fit; /*to be able to set the node-size dynamically in the app, 
+                        set this to: dyn-size (instead of fit) and uncomment the size attribute*/
+	text-size: 14; 
+        padding: 4px, 1px;
+        /*shadow-mode: plain;
+	shadow-width: 1;
+	shadow-offset: 2,-2;*/
+}
+node.START {
+	shape: box;
+        icon-mode: at-left;
+        fill-mode: dyn-plain;
+        fill-color: white;
+        stroke-mode: dots;
+	stroke-width: 1;
+        size-mode: fit;
+        text-size: 14;
+        text-style: italic;
+}
+node.REDSTART {
+        shape: box;
+        fill-mode: image-scaled-ratio-max;
+        fill-color: white;
+        stroke-mode: dots;
+	stroke-width: 1;
+        size-mode: normal;
+        size: 20px;
+        text-size: 14;
+}
+node.END {
+	shape: box;
+        icon-mode: at-left;
+        fill-mode: dyn-plain;
+        fill-color: white;
+        stroke-mode: dots;
+	stroke-width: 1;
+        size-mode: fit;
+        text-size: 14;
+        text-style: italic;
+}
+node.REDEND {
+        shape: box;
+        fill-mode: image-scaled-ratio-max;
+        fill-color: white;
+        stroke-mode: dots;
+	stroke-width: 1;
+        size-mode: normal;
+        size: 20px;
+        text-size: 14;
+}
+edge {
+        size: 1px;
+}
+edge.START {
+    fill-mode: none; 
+    stroke-mode: dots; 
+    size: 0px;
+}
+edge.END {
+    fill-mode: none; 
+    stroke-mode: dots; 
+    size: 0px;
+}

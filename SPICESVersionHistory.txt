@@ -1,0 +1,65 @@
+/**
+ * SPICES (Simplified Particle Input ConnEction Specification)
+ * Copyright (C) 2018  Achim Zielesny (achim.zielesny@googlemail.com)
+ * 
+ * Source code is available at <https://github.com/zielesny/SPICES>  
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+--------------------------------------------------------------------------------
+SPICES Version 1.0.0.0
+--------------------------------------------------------------------------------
+for Java 8 or higher
+
+Authors:
+  - Karina van den Broek (karina.broek@studmail.w-hs.de)
+  - Mirco Daniel (mirco.daniel@w-hs.de)
+  - Matthias Epple (matthias.epple@uni-due.de) 
+  - Hubert Kuhn (kuhn@molecular-dynamics.de)
+  - Jonas Schaub (jonas.schaub@studmail.w-hs.de)
+  - Achim Zielesny (achim.zielesny@w-hs.de)
+
+Acknowledgements: 
+  Many thanks to the development and project team that created the open 
+  GraphStream dynamic graph library as well as the Apache Commons contributors. 
+  The support of GNWI – Gesellschaft für naturwissenschaftliche Informatik mbH, 
+  Oer-Erkenschwick, Germany, is gratefully acknowledged.
+
+Spices.jar has no dependencies
+  
+SpicesToGraphStream.jar dependencies:
+  - Spices.jar
+  - gs-algo-1.3.jar
+    gs-core-1.3.jar
+    gs-ui-1.3.jar
+      GraphStream (http://graphstream-project.org/)
+      Version 1.3
+
+SpicesViewer.jar dependcies:
+  - Spices.jar
+  - SpicesToGraphStream.jar
+  - gs-algo-1.3.jar
+    gs-core-1.3.jar
+    gs-ui-1.3.jar
+      GraphStream (http://graphstream-project.org/)
+      Version 1.3
+  - commons-io-2.5.jar
+      Apache Commons IO (http://commons.apache.org/proper/commons-io/) 
+      Version 2.5
+
+Windows OS installer for SpicesViewer application:      
+  Install SpicesViewer 1-0-0-0.exe
+--------------------------------------------------------------------------------
+Basic operational version

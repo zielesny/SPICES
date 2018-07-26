@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="SpicesViewer.build" default="deploy" basedir=".">
+
+    <target name="initProperties" description="Initialize properties">
+
+        <!-- Source directories -->
+        <property name="src-Spices" location="../../../../Code/Spices/build/classes" />
+        <property name="src-SpicesToGraphStream" location="../../../../Code/SpicesToGraphStream/build/classes" />
+        <property name="src-SpicesViewer" location="../../../../Code/SpicesViewer/build/classes" />
+        <property name="src-java" location="../../../../Deployment/Input/java" />
+        <property name="src-jar-libs" location="../../../../Code/jar-libs" />
+        <property name="src-input" location="../../../../Deployment/SpicesViewer/Input" />
+
+        <!-- Deploy -->
+        <property name="dest" location="../../../../Deployment/SpicesViewer/Output" />
+        <property name="dest-info" location="../../../../Deployment/SpicesViewer/Output/info" />
+        <property name="dest-lib" location="../../../../Deployment/SpicesViewer/Output/lib" />
+
+    </target>
+
+    <target name="deploy" depends="initProperties" description="Create deploy">
+
+        <!-- Delete old deploy_unobfuscated directory -->
+        <delete dir="${dest}" />
+
+        <!-- Create new directories -->
+        <mkdir dir="${dest}" />
+        <mkdir dir="${dest-info}" />
+        <mkdir dir="${dest-lib}" />
+
+        <!-- Copy new start-up, info and installation info files -->
+        <copy todir="${dest-info}">
+            <fileset dir="${src-input}" includes="*.txt" />
+        </copy>
+        <copy todir="${dest}">
+            <fileset dir="${src-input}" includes="*.bat" />
+        </copy>
+        <copy todir="${dest}">
+            <fileset dir="${src-java}" />
+        </copy>
+
+        <!-- Copy jars -->
+        <copy todir="${dest-lib}">
+            <fileset dir="${src-jar-libs}" includes="gs-algo-1.3.jar" />
+            <fileset dir="${src-jar-libs}" includes="gs-core-1.3.jar" />
+            <fileset dir="${src-jar-libs}" includes="gs-ui-1.3.jar" />
+            <fileset dir="${src-jar-libs}" includes="commons-io-2.5.jar" />
+        </copy>
+        
+        <!-- Create new Spices jar -->
+        <jar jarfile="${dest-lib}/Spices.jar">
+            <fileset dir="${src-Spices}" includes="de/gnwi/spices/*.class de/gnwi/spices/*.properties" />
+
+            <manifest>
+                <attribute name="Specification-Title" value="Spices (Simplified Particle Input ConnEction Specification)"/>
+                <attribute name="Built-By" value="GNWI - Gesellschaft fuer naturwissenschaftliche Informatik (www.gnwi.de)" />
+                <attribute name="Implementation-Version" value="1.0.0.0"/> 
+                <attribute name="Implementation-Vendor" value="GNWI - Gesellschaft fuer naturwissenschaftliche Informatik (www.gnwi.de)"/>
+            </manifest>
+        </jar>
+
+        <!-- Create new SpicesToGraphStream jar -->
+        <jar jarfile="${dest-lib}/SpicesToGraphStream.jar">
+            <fileset dir="${src-SpicesToGraphStream}" includes="de/gnwi/spicestographstream/*.class de/gnwi/spicestographstream/*.properties" />
+            <fileset dir="${src-SpicesToGraphStream}" includes="de/gnwi/spicestographstream/resource/*.css de/gnwi/spicestographstream/resource/*.png" />
+
+            <manifest>
+                <attribute name="Specification-Title" value="SpicesToGraphStream (Simplified Particle Input ConnEction Specification to GraphStream)"/>
+                <attribute name="Built-By" value="GNWI - Gesellschaft fuer naturwissenschaftliche Informatik (www.gnwi.de)" />
+                <attribute name="Implementation-Version" value="1.0.0.0"/> 
+                <attribute name="Implementation-Vendor" value="GNWI - Gesellschaft fuer naturwissenschaftliche Informatik (www.gnwi.de)"/>
+                <attribute name="Class-Path" value="Spices.jar gs-algo-1.3.jar gs-core-1.3.jar gs-ui-1.3.jar" />
+            </manifest>
+        </jar>
+
+        <!-- Create new SpicesViewer jar -->
+        <jar jarfile="${dest-lib}/SpicesViewer.jar">
+            <fileset dir="${src-SpicesViewer}" includes="de/gnwi/spicesviewer/*.class de/gnwi/spicesviewer/*.properties" />
+
+            <manifest>
+                <attribute name="Specification-Title" value="Spices (Simplified Particle Input ConnEction Specification) Viewer"/>
+                <attribute name="Built-By" value="GNWI - Gesellschaft fuer naturwissenschaftliche Informatik (www.gnwi.de)" />
+                <attribute name="Implementation-Version" value="1.0.0.0"/> 
+                <attribute name="Implementation-Vendor" value="GNWI - Gesellschaft fuer naturwissenschaftliche Informatik (www.gnwi.de)"/>
+                <attribute name="Main-Class" value="de.gnwi.spicesviewer.Main" />
+                <attribute name="Class-Path" value="Spices.jar SpicesToGraphStream.jar gs-algo-1.3.jar gs-core-1.3.jar gs-ui-1.3.jar commons-io-2.5.jar" />
+            </manifest>
+        </jar>
+
+    </target>
+
+</project>
