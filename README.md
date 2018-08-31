@@ -6,7 +6,10 @@ An open Java library for SPICES structure handling and mesoscopic simulation sup
 
 SPICES uses the [GraphStream](http://graphstream-project.org/) and [Apache Commons IO](http://commons.apache.org/proper/commons-io/) libraries and is published as open source under the GNU General Public License version 3. Spices.jar is a Java library for SPICES handling and mesoscopic simulation support. SpicesToGraphStream.jar is a connection library used by SpicesViewer.jar, a Java Graphical User Interface (GUI) viewer application for visual topological inspection and manipulation of SPICES molecule definitions. This repository contains the Java bytecode libraries (including the GraphStream and Apache Commons Lang libraries), a Windows OS installer for the SpicesViewer GUI application, all Javadoc HTML documentations and the Netbeans source code packages including Unit tests.
 
-SPICES is currently under scientific review - additional information will be published soon.
+For additional information see reference below.
+
+# Reference
+[K. van den Broek, M. Daniel, M. Epple, H. Kuhn, J. Schaub and A. Zielesny, _SPICES: a particle-based molecular structure line notation and support library for mesoscopic simulation_, Journal of Cheminformatics (2018), 10:35](https://doi.org/10.1186/s13321-018-0294-7)
 
 # Acknowledgements
 The support of [GNWI - Gesellschaft für naturwissenschaftliche Informatik mbH](http://www.gnwi.de) is gratefully acknowledged.
