@@ -28,7 +28,7 @@ Authors:
   - Mirco Daniel (mirco.daniel@w-hs.de)
   - Matthias Epple (matthias.epple@uni-due.de) 
   - Hubert Kuhn (kuhn@molecular-dynamics.de)
-  - Jonas Schaub (jonas.schaub@studmail.w-hs.de)
+  - Jonas Schaub (jonas.schaub@uni-jena.de)
   - Achim Zielesny (achim.zielesny@w-hs.de)
 
 Acknowledgements: 
